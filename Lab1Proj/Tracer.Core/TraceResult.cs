@@ -2,10 +2,10 @@ namespace Tracer.Core;
 
 public class TraceResult
 {
-    public IReadOnlyCollection<TraceEntity> traces;
+    public IReadOnlyList<ThreadTrace> Threads { get; }
 
-    internal void AddResult()
+    public TraceResult(IEnumerable<ThreadTrace> threadTraces)
     {
-        
+        Threads = new List<ThreadTrace>(threadTraces);
     }
 }
