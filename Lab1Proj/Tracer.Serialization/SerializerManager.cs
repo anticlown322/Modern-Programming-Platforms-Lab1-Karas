@@ -50,7 +50,7 @@ public class SerializerManager
 
     public void UseSerializer(ITraceResultSerializer serializer, TraceResult traceResult, string path = "")
     {
-        string fileName = $"result.{serializer.Format}";
+        string fileName = Path.Combine(path, $"result.{serializer.Format}");
 
         using (FileStream fileStream = new FileStream(
                    path: fileName, 

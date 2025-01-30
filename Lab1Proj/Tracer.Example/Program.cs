@@ -38,5 +38,5 @@ foreach (var thread in threads) thread.Join();
 
 //serialize results
 var traceResult = tracer.GetTraceResult();
-serializerManager.LoadSerializers();
-serializerManager.UseSerializer(serializerManager.Serializers[0], traceResult);
+serializerManager.LoadSerializers(@"D:\Serializers");
+serializerManager.UseSerializer(serializerManager.Serializers[0], traceResult, @"D:\results\");
